@@ -292,6 +292,7 @@ class HttpResponse : public HttpMessageCommon {
         HttpResponse(const unsigned statusCode, std::string contentType, std::string content)
             : HttpResponse{statusCode} {
             (*this)["Content-Type"] = contentType;
+            (*this)["Access-Control-Allow-Origin"] = "null";
             setContent(content);
         }
 
